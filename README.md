@@ -1,7 +1,7 @@
 About r-spatialeco
 ==================
 
-Home: https://cran.r-project.org/package=spatialEco
+Home: https://github.com/jeffreyevans/spatialEco
 
 Package license: GPL-3
 
