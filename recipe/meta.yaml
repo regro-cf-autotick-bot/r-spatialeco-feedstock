@@ -24,12 +24,11 @@ requirements:
   build:
     - {{posix}}zip               # [win]
   host:
-    - r-base
+    - r-base >=3.6
     - r-envstats
     - r-mass
     - r-rann
     - r-rcurl
-    - r-sdmtools
     - r-spatialpack >=0.3
     - r-cluster
     - r-dplyr
@@ -43,14 +42,14 @@ requirements:
     - r-sp
     - r-spatstat
     - r-spdep
+    - r-velox
     - r-yaimpute
   run:
-    - r-base
+    - r-base >=3.6
     - r-envstats
     - r-mass
     - r-rann
     - r-rcurl
-    - r-sdmtools
     - r-spatialpack >=0.3
     - r-cluster
     - r-dplyr
@@ -64,6 +63,7 @@ requirements:
     - r-sp
     - r-spatstat
     - r-spdep
+    - r-velox
     - r-yaimpute
 
 test:
