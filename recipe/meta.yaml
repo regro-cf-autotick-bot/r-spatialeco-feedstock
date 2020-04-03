@@ -24,7 +24,7 @@ requirements:
   build:
     - {{posix}}zip               # [win]
   host:
-    - r-base
+    - r-base >=3.6
     - r-envstats
     - r-mass
     - r-rann
@@ -45,7 +45,7 @@ requirements:
     - r-spdep
     - r-yaimpute
   run:
-    - r-base
+    - r-base >=3.6
     - r-envstats
     - r-mass
     - r-rann
