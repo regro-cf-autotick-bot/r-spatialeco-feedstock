@@ -1,4 +1,4 @@
-{% set version = '1.2-1' %}
+{% set version = '1.3-1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spatialEco_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatialEco/spatialEco_{{ version }}.tar.gz
-  sha256: d29e8bb81226b0aa46c3685e37b6a168d46bd5068e4b68d4e1658aea4f56718b
+  sha256: ff12e26cc1bbf7934fbf712c99765d96ce6817e8055faa15a26d9ebade4bbf1c
 
 build:
   merge_build_host: True  # [win]
@@ -24,17 +24,17 @@ requirements:
   build:
     - {{posix}}zip               # [win]
   host:
-    - r-base
+    - r-base >=3.6
     - r-envstats
     - r-mass
     - r-rann
     - r-rcurl
-    - r-sdmtools
     - r-spatialpack >=0.3
     - r-cluster
     - r-dplyr
-    - r-fasterize
+    - r-exactextractr
     - r-maptools
+    - r-mgcv
     - r-raster
     - r-readr
     - r-rgeos
@@ -45,17 +45,17 @@ requirements:
     - r-spdep
     - r-yaimpute
   run:
-    - r-base
+    - r-base >=3.6
     - r-envstats
     - r-mass
     - r-rann
     - r-rcurl
-    - r-sdmtools
     - r-spatialpack >=0.3
     - r-cluster
     - r-dplyr
-    - r-fasterize
+    - r-exactextractr
     - r-maptools
+    - r-mgcv
     - r-raster
     - r-readr
     - r-rgeos
@@ -92,12 +92,12 @@ extra:
 # Package: spatialEco
 # Type: Package
 # Title: Spatial Analysis and Modelling Utilities
-# Version: 1.2-1
-# Date: 2019-09-30
-# Authors@R: c(person(family="Evans", given="Jeffrey S.", email = "jeffrey_evans@tnc.org", role = c("aut", "cre")), person(family="Ram", given="Karthik", role = "ctb") )
+# Version: 1.3-1
+# Date: 2020-03-25
+# Authors@R: c(person(family="Evans", given="Jeffrey S.", email = "jeffrey_evans@tnc.org", role = c("aut", "cre")))
 # Description: Utilities to support spatial data manipulation, query, sampling and modelling. Functions include models for species population density, download utilities for climate and global deforestation spatial products, spatial smoothing, multivariate separability, point process model for creating pseudo- absences and sub-sampling, polygon and point-distance landscape metrics, auto-logistic model, sampling models, cluster optimization, statistical exploratory tools and raster-based metrics.
-# Depends: R (>= 3.5.0)
-# Imports: dplyr, fasterize, sp, sf, raster, spatstat, cluster, spdep, SDMTools, readr, RCurl, rgeos, RANN, rms, yaImpute, SpatialPack (>= 0.3), MASS, EnvStats, maptools, methods
+# Depends: R (>= 3.6.0)
+# Imports: dplyr, exactextractr, sp, sf, raster, spatstat, cluster, spdep, readr, RCurl, rgeos, RANN, rms, yaImpute, SpatialPack (>= 0.3), MASS, mgcv, EnvStats, maptools, methods
 # Maintainer: Jeffrey S. Evans <jeffrey_evans@tnc.org>
 # License: GPL-3
 # URL: https://github.com/jeffreyevans/spatialEco
@@ -105,7 +105,7 @@ extra:
 # Repository: CRAN
 # LazyData: true
 # Encoding: UTF-8
-# RoxygenNote: 6.1.1
-# Packaged: 2019-10-02 23:52:10 UTC; jeffrey_evans
-# Author: Jeffrey S. Evans [aut, cre], Karthik Ram [ctb]
-# Date/Publication: 2019-10-03 05:10:06 UTC
+# RoxygenNote: 7.1.0
+# Packaged: 2020-03-25 23:43:59 UTC; jeffrey_evans
+# Author: Jeffrey S. Evans [aut, cre]
+# Date/Publication: 2020-04-01 14:00:03 UTC
